@@ -1,3 +1,20 @@
+terraform {
+   backend "azurerm" {
+   resource_group_name = "aditya123"
+    storage_account_name = "digamberbhai12"                             
+    container_name       = "huganda1"                             
+    key                  = "prod.terraform.tfstate"               
+   }
+  required_providers {
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "4.68.0"
+    }
+  }
+}
+provider "azurerm" {
+  features {}
+}
 resource "azurerm_resource_group" "manojbhai12" {
   name     = "aditya123"
   location = "westus"
